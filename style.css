@@ -1,0 +1,21 @@
+.bg-image {
+    background-size: cover;
+    background-position: center center;
+  }
+  
+
+
+.container{
+ 
+    
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#Score{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: larger;
+    color: rgb(207, 43, 89);
+}
