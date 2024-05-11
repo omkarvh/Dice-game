@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Dice Game</title>
+</head>
+<body class="bg-img" style="background-image: url('images/back.jpg');">
+<h1 class="m-5">Refresh me</h1>
+
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-2 col text-center">Player 1 :</div>
+        <div class="col-2 col text-center" id="imageContainer"></div>
+        <div class="col-2 col p-5 text-center" id="player1"></div>
+        <div class="col-2 col text-center">Player 2 :</div>
+        <div class="col-2 col text-center" id="imageContainer2"></div>
+        <div class="col-2 col p-5 text-center" id="player2"></div>
+    </div>
+</div>
+
+<div class="col text-center m-5" id="Score"></div>
+
+<script>
+    function getRandomNumber() {
+        return Math.floor(Math.random() * 6) + 1;
+    }
+
+    var a = getRandomNumber();
+    var b = getRandomNumber();
+
+    document.getElementById("player1").innerHTML = a;
+    document.getElementById("player2").innerHTML = b;
+
+    if (a < b) {
+        document.getElementById("Score").innerHTML = "Player 2 is the winner";
+    } else if (a > b) {
+        document.getElementById("Score").innerHTML = "Player 1 is the winner";
+    } else {
+        document.getElementById("Score").innerHTML = "It's a draw";
+    }
+
+    displayImage(a, "imageContainer");
+    displayImage(b, "imageContainer2");
+
+    function displayImage(number, containerId) {
+        var imageContainer = document.getElementById(containerId);
+        imageContainer.innerHTML = "";
+
+        var imagePath;
+        switch (number) {
+            case 1:
+                imagePath = "images/one.png";
+                break;
+            case 2:
+                imagePath = "images/two.png";
+                break;
+            case 3:
+                imagePath = "images/three.png";
+                break;
+            case 4:
+                imagePath = "images/four.png";
+                break;
+            case 5:
+                imagePath = "images/five.png";
+                break;
+            case 6:
+                imagePath = "images/six.png";
+                break;
+            default:
+                imagePath = "images/no-image.png";
+                break;
+        }
+
+        imageContainer.style.backgroundImage = "url('" + imagePath + "')";
+        imageContainer.style.width = "100px";
+        imageContainer.style.height = "100px";
+        imageContainer.style.backgroundSize = "cover";
+    }
+</script>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+-->
+</body>
+</html>
