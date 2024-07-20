@@ -1,4 +1,5 @@
 Dice Game Mini Project
+![Project Image](https://github.com/omkarvh/Dice-game/blob/main/images/bg.jpg?raw=true)
 Welcome to the Dice Game Mini Project!
 
 Introduction
